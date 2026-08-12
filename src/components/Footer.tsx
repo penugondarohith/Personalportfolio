@@ -75,24 +75,34 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2"
+            className="flex flex-col gap-3"
           >
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  link.href.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-muted hover:text-foreground hover:bg-white/5 transition-all"
-                aria-label={link.label}
-              >
-                <link.icon className="h-4 w-4" />
-              </a>
-            ))}
+            <div className="flex items-center gap-2">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    link.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="flex h-8 w-8 items-center justify-center rounded-lg text-muted hover:text-foreground hover:bg-white/5 transition-all"
+                  aria-label={link.label}
+                >
+                  <link.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+            <a
+              href="https://github.com/penugondarohith"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-primary hover:text-primary/80 transition-colors"
+            >
+              github.com/penugondarohith
+            </a>
           </motion.div>
         </div>
       </div>

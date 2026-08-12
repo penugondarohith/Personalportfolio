@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, HeartHandshake, Seedling } from "lucide-react";
+import { Users, HeartHandshake, Leaf } from "lucide-react";
 
 const activities = [
   {
@@ -58,7 +58,7 @@ export function VolunteerExperience() {
               className="glass rounded-3xl border border-border p-6 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 text-primary mb-4">
-                {index === 0 ? <HeartHandshake className="w-6 h-6" /> : index === 1 ? <Seedling className="w-6 h-6" /> : <Users className="w-6 h-6" />}
+                {index === 0 ? <HeartHandshake className="w-6 h-6" /> : index === 1 ? <Leaf className="w-6 h-6" /> : <Users className="w-6 h-6" />}
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">{activity.title}</h3>
               <p className="text-sm text-muted/70 leading-relaxed">{activity.desc}</p>
