@@ -1,110 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Mail } from "lucide-react";
-import { SiGithub } from "react-icons/si";
-import { FaLinkedinIn } from "react-icons/fa6";
+import { Mail, FileText } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-const socialLinks = [
-  {
-    icon: SiGithub,
-    href: "https://github.com/penugondarohith",
-    label: "GitHub",
-  },
-  {
-    icon: FaLinkedinIn,
-    href: "https://www.linkedin.com/in/penugonda-rohith-543250313",
-    label: "LinkedIn",
-  },
-  {
-    icon: Mail,
-    href: "mailto:penugondarohith2004@gmail.com",
-    label: "Email",
-  },
+interface FooterLink {
+  label: string;
+  href: string;
+  icon: React.ComponentType<any>;
+}
+
+const footerLinks: FooterLink[] = [
+  { label: "GitHub", href: "https://github.com/penugondarohith", icon: FaGithub },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/penugonda-rohith-543250313", icon: FaLinkedin },
+  { label: "Email", href: "mailto:penugondarohith2004@gmail.com", icon: Mail },
+  { label: "Resume", href: "https://drive.google.com/file/d/1OK8GSF-RO0DJ7wU-5JyFKAVnADycjX-h/view?usp=drive_link", icon: FileText },
 ];
 
-/**
- * Footer — minimal, premium footer with gradient top border,
- * social links, and copyright notice.
- */
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="relative border-t border-border">
-      {/* Gradient top border overlay */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+    <footer className="border-t border-border px-6 py-10">
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left"
+        >
+          <div>
+            <p className="text-xl font-semibold text-foreground">Rohith Penugonda</p>
+            <p className="mt-2 text-sm text-muted">
+              AI/ML Engineer • Generative AI • Agentic AI • Software Development
+            </p>
+          </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Left — Branding */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3"
-          >
-            <div className="flex items-center gap-1">
-              <span className="text-sm font-mono text-muted">&lt;</span>
-              <span className="text-sm font-heading font-bold gradient-text">
-                PR
-              </span>
-              <span className="text-sm font-mono text-muted">/&gt;</span>
-            </div>
-            <span className="text-sm text-muted">
-              © {currentYear} Penugonda Rohith
-            </span>
-          </motion.div>
-
-          {/* Center — Built with love */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="flex items-center gap-1.5 text-sm text-muted"
-          >
-            Built with
-            <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" />
-            using Next.js &amp; Framer Motion
-          </motion.p>
-
-          {/* Right — Social Icons */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col gap-3"
-          >
-            <div className="flex items-center gap-2">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    link.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="flex h-8 w-8 items-center justify-center rounded-lg text-muted hover:text-foreground hover:bg-white/5 transition-all"
-                  aria-label={link.label}
-                >
-                  <link.icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
-            <a
-              href="https://github.com/penugondarohith"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-primary hover:text-primary/80 transition-colors"
-            >
-              github.com/penugondarohith
-            </a>
-          </motion.div>
-        </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 md:justify-end">
+            {footerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-white/5 px-3 py-1.5 text-sm text-muted transition-colors hover:border-primary/20 hover:text-primary"
+              >
+                <link.icon className="h-4 w-4" />
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </footer>
   );

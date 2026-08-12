@@ -3,7 +3,6 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-/* --- Font Configuration --- */
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
@@ -22,57 +21,65 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-/* --- SEO Metadata --- */
 export const metadata: Metadata = {
-  title: "Penugonda Rohith | Agentic AI Developer & Full Stack Engineer",
+  metadataBase: new URL("https://penugondarohith.dev"),
+  title: "Rohith Penugonda | AI/ML Engineer | Generative AI & Agentic AI",
   description:
-    "Portfolio of Penugonda Rohith — B.Tech CS (AI & ML) student building intelligent applications with Generative AI, Agentic AI, Machine Learning, and Full Stack Development.",
+    "AI/ML engineering student building Generative AI, Agentic AI, Machine Learning and full-stack applications.",
   keywords: [
-    "Penugonda Rohith",
-    "Agentic AI Developer",
-    "Full Stack Developer",
+    "Rohith Penugonda",
     "AI/ML Engineer",
-    "Software Engineer",
-    "Portfolio",
-    "Next.js",
-    "React",
-    "Python",
+    "Generative AI Engineer",
+    "Agentic AI Engineer",
     "Machine Learning",
+    "LLM Applications",
+    "RAG",
+    "Multi-Agent Systems",
+    "Full Stack Developer",
+    "Python",
+    "React",
+    "Flask",
+    "OpenAI",
     "CrewAI",
     "LangGraph",
   ],
-  authors: [{ name: "Penugonda Rohith" }],
-  creator: "Penugonda Rohith",
+  authors: [{ name: "Rohith Penugonda" }],
+  creator: "Rohith Penugonda",
+  publisher: "Rohith Penugonda",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://penugondarohith.dev",
-    title: "Penugonda Rohith | Agentic AI Developer & Full Stack Engineer",
+    title: "Rohith Penugonda | AI/ML Engineer | Generative AI & Agentic AI",
     description:
-      "B.Tech CS (AI & ML) student building intelligent applications with Generative AI, Agentic AI, and Full Stack Development.",
-    siteName: "Penugonda Rohith — Portfolio",
+      "AI/ML engineering student building Generative AI, Agentic AI, Machine Learning and full-stack applications.",
+    siteName: "Rohith Penugonda Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Penugonda Rohith | Agentic AI Developer & Full Stack Engineer",
+    title: "Rohith Penugonda | AI/ML Engineer | Generative AI & Agentic AI",
     description:
-      "B.Tech CS (AI & ML) student building intelligent applications with Generative AI, Agentic AI, and Full Stack Development.",
+      "AI/ML engineering student building Generative AI, Agentic AI, Machine Learning and full-stack applications.",
   },
   robots: {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
-/* --- JSON-LD Structured Data --- */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Penugonda Rohith",
+  name: "Rohith Penugonda",
   url: "https://penugondarohith.dev",
-  jobTitle: "Agentic AI Developer",
+  jobTitle: "AI/ML Engineer",
   description:
-    "B.Tech Computer Science (AI & ML) student passionate about building intelligent applications.",
+    "AI/ML engineering student building Generative AI, Agentic AI, Machine Learning and full-stack applications.",
   sameAs: [
     "https://github.com/penugondarohith",
     "https://www.linkedin.com/in/penugonda-rohith-543250313",
@@ -96,7 +103,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-background text-foreground antialiased noise-overlay">
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

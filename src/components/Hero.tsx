@@ -2,176 +2,138 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { AnimatedTitles } from "./AnimatedTitles";
+import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { CTAButtons } from "./CTAButtons";
 import { SocialIcons } from "./SocialIcons";
-import { FloatingIcons } from "./FloatingIcons";
-import { HeroBackground } from "./HeroBackground";
-import { ScrollIndicator } from "./ScrollIndicator";
 
-/**
- * Hero — full-viewport hero section with split layout.
- * Left: introduction, animated titles, CTAs, socials.
- * Right: profile photo centered among floating tech icons.
- */
+const credibility = [
+  "8.2 GPA",
+  "700+ Coding Problems",
+  "B.Tech AI/ML | 2023–2027",
+  "AI/ML Projects",
+];
+
+const resumeUrl = "https://drive.google.com/file/d/1OK8GSF-RO0DJ7wU-5JyFKAVnADycjX-h/view?usp=drive_link";
+
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden"
-    >
-      <HeroBackground />
+    <section id="home" className="relative overflow-hidden px-6 pb-16 pt-28 md:pt-36">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(124,58,237,0.18),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.12),_transparent_24%)]" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* ========== LEFT SIDE ========== */}
-        <div className="space-y-6 md:space-y-8">
-          {/* Open for Internships Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-primary border border-primary/20 animate-[badge-glow_3s_ease-in-out_infinite]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-              </span>
-              Open for Internships
-            </div>
-          </motion.div>
-
-          {/* Name */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-2"
-          >
-            <p className="text-lg md:text-xl text-muted font-medium">
-              Hi, I&apos;m
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
-              <span className="text-foreground">Penugonda</span>
-              <br />
-              <span className="gradient-text">Rohith</span>
-            </h1>
-          </motion.div>
-
-          {/* Animated Job Titles */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <AnimatedTitles />
-          </motion.div>
-
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-base md:text-lg text-muted font-medium italic"
-          >
-            Transforming Ideas into Intelligent Software.
-          </motion.p>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-sm md:text-base text-muted/80 leading-relaxed max-w-xl"
-          >
-            I am a B.Tech Computer Science (AI &amp; Machine Learning) student
-            passionate about building intelligent applications using Generative
-            AI, Agentic AI, Machine Learning, and Full Stack Development. I enjoy
-            solving real-world problems by combining AI with scalable software
-            engineering and modern web technologies.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <CTAButtons />
-
-          {/* Social Icons */}
-          <SocialIcons />
-        </div>
-
-        {/* ========== RIGHT SIDE — Profile Photo + Floating Icons ========== */}
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <motion.div
-          initial={{ opacity: 0, x: 60, filter: "blur(20px)" }}
-          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="hidden lg:flex items-center justify-center"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-7"
         >
-          <div className="relative" style={{ width: 400, height: 400 }}>
-            {/* Floating Tech Icons — orbiting circle */}
-            <FloatingIcons />
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="h-2 w-2 rounded-full bg-primary" />
+            AI / ML Engineer
+          </div>
 
-            {/* Decorative orbit rings */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <motion.div
-                className="absolute w-[320px] h-[320px] rounded-full border border-primary/10"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute w-[380px] h-[380px] rounded-full border border-secondary/5"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              />
-            </div>
+          <div className="space-y-4">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted md:text-base">
+              Rohith Penugonda
+            </p>
+            <h1 className="max-w-2xl text-4xl font-black tracking-tight text-foreground md:text-5xl lg:text-6xl">
+              AI/ML Engineer | Generative AI &amp; Agentic AI | Software Developer
+            </h1>
+          </div>
 
-            {/* Profile Photo — absolutely centered */}
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div className="relative">
-                {/* Gradient glow behind photo */}
-                <motion.div
-                  className="absolute -inset-8 rounded-full blur-[50px] opacity-40"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(59, 130, 246, 0.3), rgba(168, 85, 247, 0.4))",
-                  }}
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    opacity: [0.3, 0.5, 0.3],
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                />
+          <p className="max-w-xl text-base leading-relaxed text-muted md:text-lg">
+            AI/ML engineering student building intelligent applications using Machine
+            Learning, Generative AI, Agentic AI, LLMs, and modern full-stack technologies.
+          </p>
 
-                {/* Rotating gradient ring */}
-                <motion.div
-                  className="absolute -inset-2 rounded-full"
-                  style={{
-                    background:
-                      "conic-gradient(from 0deg, #7C3AED, #3B82F6, #A855F7, #7C3AED)",
-                    padding: 3,
-                  }}
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                >
-                  <div className="w-full h-full rounded-full bg-background" />
-                </motion.div>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5"
+            >
+              View Projects
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:text-primary"
+            >
+              <Download className="h-4 w-4" />
+              Download Resume
+            </a>
+            <a
+              href="https://github.com/penugondarohith"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:text-primary"
+            >
+              <FaGithub className="h-4 w-4" />
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/penugonda-rohith-543250313"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:text-primary"
+            >
+              <FaLinkedin className="h-4 w-4" />
+              LinkedIn
+            </a>
+          </div>
 
-                {/* Actual photo */}
-                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/20 group cursor-default">
-                  <Image
-                    src="/profile.jpg"
-                    alt="Penugonda Rohith"
-                    fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    priority
-                    sizes="192px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
+          <div className="grid max-w-xl gap-3 sm:grid-cols-2">
+            {credibility.map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-2 rounded-2xl border border-border bg-white/4 px-3 py-2.5 text-sm font-medium text-muted"
+              >
+                <Sparkles className="h-4 w-4 text-primary" />
+                {item}
               </div>
+            ))}
+          </div>
+
+          <SocialIcons />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative mx-auto w-full max-w-md"
+        >
+          <div className="relative flex items-center justify-center">
+            <div className="absolute inset-10 rounded-full bg-primary/15 blur-3xl" />
+            <div className="absolute inset-0 rounded-[32px] border border-primary/15 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
+            <div className="relative overflow-hidden rounded-[30px] border border-border bg-card/80 p-3 shadow-2xl shadow-primary/10">
+              <div className="aspect-[4/5] w-full overflow-hidden rounded-[24px] border border-border bg-slate-950">
+                <Image
+                  src="/profile.jpg"
+                  alt="Rohith Penugonda"
+                  width={640}
+                  height={800}
+                  priority
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="rounded-2xl border border-border bg-white/5 p-3">
+              <p className="text-xs uppercase tracking-[0.18em] text-muted">Focus</p>
+              <p className="mt-2 text-base font-semibold text-foreground">Generative AI</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-white/5 p-3">
+              <p className="text-xs uppercase tracking-[0.18em] text-muted">Builds</p>
+              <p className="mt-2 text-base font-semibold text-foreground">AI Agents</p>
             </div>
           </div>
         </motion.div>
       </div>
-
-      <ScrollIndicator />
     </section>
   );
 }

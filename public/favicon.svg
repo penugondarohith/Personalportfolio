@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Rohith Penugonda portfolio icon">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#050816"/> 
+  <path d="M18 18h9l12 28h-9l-3-7h-9l-2 7H9l9-28zm10 8-4 11h8l-4-11z" fill="url(#g)"/>
+  <path d="M39 18h11v5H45v6h4v5h-4v9h-6V18z" fill="#E2E8F0" opacity="0.9"/>
+</svg>
