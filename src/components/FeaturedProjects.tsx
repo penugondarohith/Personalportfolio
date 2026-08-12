@@ -1,31 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 const projects = [
   {
-    title: "AI Portfolio Assistant",
-    tagline: "Interactive AI chatbot for portfolio visitors.",
+    title: "Multi-Agent Interview Preparation System",
+    tagline: "AI-driven interview practice with collaborative agent workflows.",
     description:
-      "Built with Next.js, OpenAI, and custom AI prompts to answer questions about skills, projects, and experience in real time.",
-    highlights: ["GPT-4.1 chat workflow", "Knowledge retrieval ready", "Modern responsive UI"],
+      "Built a multi-agent system that coordinates study plans, generates interview questions, and delivers personalized feedback for technical candidates.",
+    highlights: ["Agent orchestration", "Adaptive question generation", "Performance tracking"],
     href: "https://github.com/penugondarohith",
   },
   {
-    title: "Machine Learning Showcase",
-    tagline: "End-to-end ML solutions for real-world datasets.",
+    title: "Customer Churn Project",
+    tagline: "Predicting churn to increase customer retention using ML.",
     description:
-      "Designed predictive classification systems with TensorFlow, Scikit-learn, and data-driven evaluation for accuracy and model quality.",
-    highlights: ["Training pipelines", "Data analysis dashboards", "Performance validation"],
+      "Developed a predictive analytics solution to identify churn risk and recommend retention strategies using supervised learning models.",
+    highlights: ["Data preprocessing", "Model evaluation", "Business insights"],
     href: "https://github.com/penugondarohith",
   },
   {
-    title: "Portfolio Website",
-    tagline: "A polished brand presence for a developer and AI student.",
+    title: "SkillGap AI",
+    tagline: "Intelligent skill-gap analysis for learner upskilling.",
     description:
-      "This portfolio is built with Next.js, Tailwind CSS, and motion-rich interactions to showcase skills, projects, and contact pathways.",
-    highlights: ["Next.js 16 + Turbopack", "Framer Motion animations", "Mobile-first experience"],
+      "Created an AI tool that maps current skills to target roles and suggests learning paths to close career gaps effectively.",
+    highlights: ["Skill profiling", "Role alignment", "Personalized recommendations"],
+    href: "https://github.com/penugondarohith",
+  },
+  {
+    title: "Smart Book Recommendation System",
+    tagline: "A recommendation engine for personalized book discovery.",
+    description:
+      "Implemented a smart book recommender that suggests relevant books based on user interests, behavior, and reading patterns.",
+    highlights: ["Recommendation algorithm", "User preferences", "Intuitive UI"],
+    href: "https://github.com/penugondarohith",
+  },
+  {
+    title: "Blog Platform",
+    tagline: "A dynamic blogging platform with modern CMS features.",
+    description:
+      "Built a full-stack blog solution with content management, rich text authoring, and responsive design for seamless publishing.",
+    highlights: ["Content management", "Responsive design", "SEO-friendly architecture"],
     href: "https://github.com/penugondarohith",
   },
 ];
@@ -99,7 +115,7 @@ export function FeaturedProjects() {
                 className="mt-8 inline-flex items-center justify-between gap-2 rounded-2xl border border-border px-4 py-3 text-sm font-medium text-primary hover:bg-primary/5 transition-all duration-200"
               >
                 <span className="flex items-center gap-2">
-                  <Github className="h-4 w-4" />
+                  <span className="h-4 w-4 text-primary">GH</span>
                   View on GitHub
                 </span>
                 <ArrowUpRight className="h-4 w-4" />
