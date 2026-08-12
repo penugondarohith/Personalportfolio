@@ -11,7 +11,6 @@ import {
   Cpu,
   Puzzle,
 } from "lucide-react";
-import { AboutChatbot } from "./AboutChatbot";
 
 const quickFacts = [
   { icon: GraduationCap, label: "B.Tech CS (AI/ML)", subtitle: "Education", color: "text-violet-400" },
@@ -39,9 +38,6 @@ export function AboutRight() {
       transition={{ duration: 0.7, delay: 0.15 }}
       className="space-y-10"
     >
-      {/* AI Chatbot — compact */}
-      <AboutChatbot />
-
       {/* Quick Facts */}
       <div className="space-y-4">
         <h4 className="text-xs font-mono text-muted tracking-[0.2em] uppercase">Quick Facts</h4>
