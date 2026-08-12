@@ -18,7 +18,7 @@ const buttons = [
   {
     label: "Download Resume",
     icon: Download,
-    href: "https://drive.google.com/file/d/1zLwCrz3eioHIPHRhXv-ugFsTM_QFqtN2/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1OK8GSF-RO0DJ7wU-5JyFKAVnADycjX-h/view?usp=drive_link",
     variant: "outline" as const,
     external: true,
   },

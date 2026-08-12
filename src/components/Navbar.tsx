@@ -89,7 +89,7 @@ export function Navbar() {
           {/* Right Side: Resume + Theme Toggle */}
           <div className="hidden md:flex items-center gap-3">
             <motion.a
-              href="https://drive.google.com/file/d/1zLwCrz3eioHIPHRhXv-ugFsTM_QFqtN2/view?usp=sharing"
+              href="https://drive.google.com/file/d/1OK8GSF-RO0DJ7wU-5JyFKAVnADycjX-h/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-xl bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition-all border border-primary/20"
@@ -147,7 +147,7 @@ export function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.05 }}
-                  href="https://drive.google.com/file/d/1zLwCrz3eioHIPHRhXv-ugFsTM_QFqtN2/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1OK8GSF-RO0DJ7wU-5JyFKAVnADycjX-h/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2.5 text-sm text-primary font-medium"

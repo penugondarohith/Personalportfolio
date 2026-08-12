@@ -9,7 +9,7 @@ const educationData = [
     institution: "Vignan Institute of Technology and Science",
     duration: "2023 – 2027",
     location: "Hyderabad",
-    grade: "CGPA: 8.2 / 10",
+    grade: "Bachelor of Technology coursework in AI & Machine Learning, Web Development, and Data Structures",
     focus: ["AI & Machine Learning", "Web Development", "Data Structures", "Python"],
   },
   {

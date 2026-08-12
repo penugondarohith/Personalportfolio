@@ -26,7 +26,7 @@ const socials = [
   },
   {
     icon: FileText,
-    href: "https://drive.google.com/file/d/1zLwCrz3eioHIPHRhXv-ugFsTM_QFqtN2/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1OK8GSF-RO0DJ7wU-5JyFKAVnADycjX-h/view?usp=drive_link",
     label: "Resume",
     hoverColor: "hover:text-amber-400 hover:bg-amber-400/10",
   },
