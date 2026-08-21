@@ -11,7 +11,6 @@ const navItems = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -83,7 +82,7 @@ export function Navbar() {
               whileTap={{ scale: 0.98 }}
             >
               <FileText className="h-4 w-4" />
-              Download Resume
+              Resume
             </motion.a>
             <ThemeToggle />
           </div>

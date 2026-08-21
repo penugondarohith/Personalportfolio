@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 
 export function GitHubActivity() {
   return (
-    <section className="relative overflow-hidden px-6 py-24 md:py-28">
+    <section id="github" className="relative overflow-hidden px-6 py-24 md:py-28">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       </div>

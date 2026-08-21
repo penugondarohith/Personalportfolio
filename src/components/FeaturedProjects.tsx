@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Briefcase, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 const projects = [
@@ -58,18 +58,30 @@ const projects = [
     demo: "#",
   },
   {
-    title: "Data Analyst Project",
-    problem: "Decision-makers need clear, evidence-based insights from business and operational data.",
+    title: "Smart Book Recommendation System",
+    problem: "Readers need personalized recommendations that help them discover relevant books quickly.",
     solution:
-      "A data analysis project combining SQL/Python workflows, visualizations, and business insight generation for reporting and analysis.",
+      "A recommendation engine that suggests relevant books based on user interests, behavior, and reading patterns.",
     architecture: [
-      "Data analysis",
-      "SQL and Python processing",
-      "Visualization",
-      "Power BI reporting",
-      "Business insight extraction",
+      "Recommendation algorithm",
+      "User preferences",
+      "Intuitive UI",
     ],
-    tech: ["Python", "SQL", "Power BI", "Visualization"],
+    tech: ["Python", "Machine Learning", "Streamlit"],
+    href: "https://github.com/penugondarohith",
+    demo: "#",
+  },
+  {
+    title: "Blog Platform",
+    problem: "Content creators need a simple, modern space to publish and manage blog content.",
+    solution:
+      "A full-stack blogging platform with content management, rich text authoring, and responsive publishing workflows.",
+    architecture: [
+      "Content management",
+      "Responsive design",
+      "SEO-friendly architecture",
+    ],
+    tech: ["Next.js", "React", "Node.js", "MongoDB"],
     href: "https://github.com/penugondarohith",
     demo: "#",
   },
@@ -92,13 +104,16 @@ export function FeaturedProjects() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Featured Projects</p>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            AI and software projects built around <span className="gradient-text">real problems</span>
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">Projects</p>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            Selected Work <span className="gradient-text">Highlights</span>
           </h2>
+          <p className="mx-auto mt-3 max-w-xl text-xs leading-relaxed text-muted">
+            A curated showcase of recent AI, machine learning, and web development projects that demonstrate practical impact and polished delivery.
+          </p>
         </motion.div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.article
               key={project.title}
@@ -106,68 +121,34 @@ export function FeaturedProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="overflow-hidden rounded-[28px] border border-border bg-white/4"
+              className="flex min-h-[264px] flex-col rounded-2xl border border-border bg-white/[0.03] p-3 transition-colors hover:border-primary/25"
             >
-              <div className="h-48 border-b border-border bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 p-4">
-                <div className="flex h-full items-end justify-between rounded-[20px] border border-border bg-black/20 p-4">
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">Project {index + 1}</p>
-                    <h3 className="mt-3 text-xl font-semibold text-foreground">{project.title}</h3>
-                  </div>
-                  <Sparkles className="h-5 w-5 text-primary" />
-                </div>
-              </div>
+              <div className="flex flex-1 flex-col space-y-3 p-1">
+                <p className="w-fit rounded-full bg-primary/10 px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.2em] text-primary">Project {index + 1}</p>
+                <h3 className="text-sm font-semibold leading-tight text-foreground">{project.title}</h3>
+                <p className="text-[10px] leading-relaxed text-muted">{project.problem}</p>
+                <p className="text-[10px] leading-relaxed text-muted">{project.solution}</p>
 
-              <div className="space-y-5 p-6">
-                <p className="text-sm font-medium text-muted">{project.problem}</p>
-                <p className="text-sm leading-relaxed text-muted">{project.solution}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="rounded-full border border-border bg-black/10 px-2.5 py-1 text-[11px] font-medium text-foreground">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="space-y-2">
-                  {project.architecture.slice(0, 4).map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm text-muted">
-                      <span className="h-2 w-2 rounded-full bg-primary" />
+                <div className="space-y-1">
+                  {project.architecture.slice(0, 3).map((item) => (
+                    <div key={item} className="flex items-center gap-2 text-[10px] text-muted">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                       {item}
                     </div>
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-3 pt-2">
+                <div className="mt-auto flex flex-wrap gap-2 pt-3">
                   <a
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-3 py-2 text-sm font-semibold text-foreground hover:border-primary/20 hover:text-primary"
+                    className="flex w-full items-center justify-between rounded-xl border border-border bg-white/[0.02] px-2.5 py-1.5 text-[10px] font-medium text-primary hover:border-primary/30"
                   >
                     <FaGithub className="h-4 w-4" />
-                    GitHub
+                    GH View on GitHub
+                    <ArrowUpRight className="h-3 w-3" />
                   </a>
-                  {project.demo !== "#" && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/10 px-3 py-2 text-sm font-semibold text-primary"
-                    >
-                      Live Demo
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  )}
-                  <button
-                    type="button"
-                    onClick={() => setSelectedProject(project)}
-                    className="inline-flex items-center gap-2 rounded-xl border border-border bg-transparent px-3 py-2 text-sm font-semibold text-foreground hover:border-primary/20 hover:text-primary"
-                  >
-                    Case Study
-                    <Briefcase className="h-4 w-4" />
-                  </button>
                 </div>
               </div>
             </motion.article>

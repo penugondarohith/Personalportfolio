@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { AboutMe } from "@/components/AboutMe";
+import { InternshipExperience } from "@/components/InternshipExperience";
 import { WhatIBuild } from "@/components/WhatIBuild";
 import { Experience } from "@/components/VolunteerExperience";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
@@ -22,12 +23,13 @@ export default function Home() {
       <main>
         <Hero />
         <AboutMe />
-        <WhatIBuild />
-        <Experience />
+        <InternshipExperience />
         <FeaturedProjects />
+        <WhatIBuild />
         <Skills />
         <Education />
         <Certifications />
+        <Experience />
         <GitHubActivity />
         <ContactSection />
       </main>
